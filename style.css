@@ -424,8 +424,9 @@ a, button, [role="button"], [role="link"], input, textarea, select {
 .hero__logo-img {
   width: 320px;
   height: 320px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 60px rgba(212, 168, 67, 0.15));
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(212, 168, 67, 0.12);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -833,6 +834,53 @@ a, button, [role="button"], [role="link"], input, textarea, select {
   margin-top: var(--space-10);
 }
 
+/* === PAST PERFORMANCE === */
+.performance__content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.performance__statement p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: var(--space-4);
+}
+
+.performance__statement p:last-child {
+  margin-bottom: 0;
+}
+
+.performance__cta {
+  background: var(--color-accent-light);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.performance__cta h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.performance__cta p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .performance__content {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* === CONTACT === */
 .contact__grid {
   display: grid;
@@ -1149,6 +1197,7 @@ a.contact__info-value:hover {
   .hero__logo-img {
     width: 200px;
     height: 200px;
+    border-radius: var(--radius-lg);
   }
 
   .hero__scroll-indicator {
